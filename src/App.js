@@ -1,7 +1,7 @@
 import React from 'react';
 import fakenews from './assets/fakenews.JPG';
 import './App.css';
-import SearchBar from './components/SearchBar';
+import SearchForm from './components/SearchForm/SearchForm';
 
 function App() {
   return (
@@ -9,8 +9,8 @@ function App() {
         <div className="App-ImageHeader">
           <img src={fakenews} />
         </div>
-        <div className="App-Body">
-          <SearchBar />
+        <div className="App-body">
+          <SearchForm />
         </div>
     </div>
   );
