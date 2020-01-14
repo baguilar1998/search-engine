@@ -12,10 +12,16 @@ class SearchForm extends Component {
 
     render() {
         return(
-            <div className="SearchForm-formContainer">
+            <div className="SearchForm-container">
                 <form className="SearchForm-form">
                     <input className="SearchForm-searchBar" type="text" onChange={this.updateSearchInput}/>
-                    <button className="SearchForm-searchButton">Search</button>
+                    <div onClick={this.search} className="SearchForm-searchButtonBorder" >
+                        <div className="SearchForm-searchButtonInner" >
+                            <a className="SearchForm-searchButtonText">
+                                <span className="SearchForm-searchButton">Search</span>
+                            </a>
+                        </div>
+                    </div>
                 </form>
             </div>
         );
@@ -27,6 +33,11 @@ class SearchForm extends Component {
             searchInput: newSearchInput
         });
         console.log(newSearchInput);
+    }
+
+    search = (event) => {
+        event.preventDefault();
+        console.log('This button works!');
     }
 
 }
