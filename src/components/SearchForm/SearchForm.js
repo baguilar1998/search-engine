@@ -15,11 +15,13 @@ class SearchForm extends Component {
             <div className="SearchForm-container">
                 <form className="SearchForm-form">
                     <input className="SearchForm-searchBar" type="text" onChange={this.updateSearchInput}/>
-                    <div onClick={this.search} className="SearchForm-searchButtonBorder" >
-                        <div className="SearchForm-searchButtonInner" >
-                            <a className="SearchForm-searchButtonText">
-                                <span className="SearchForm-searchButton">Search</span>
-                            </a>
+                    <div className="SearchForm-buttonContainer">
+                        <div onClick={this.search} className="SearchForm-searchButton" >
+                            <div className="SearchForm-searchButtonInner" >
+                                <a className="SearchForm-searchButtonText">
+                                    <span className="SearchForm-searchButtonSpan">Search</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </form>

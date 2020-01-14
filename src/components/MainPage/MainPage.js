@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchForm from '../SearchForm/SearchForm';
-import fakenewslogo from '../../assets/fakenews.JPG';
+import fakenewslogo from '../../assets/fakenews.png';
 import './MainPage.scss';
 
 const MainPage = () => {
