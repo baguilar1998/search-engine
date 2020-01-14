@@ -6,6 +6,11 @@ import './MainPage.scss';
 const MainPage = () => {
     return(
         <div className="MainPage-container">
+            <div className="MainPage-copyrightHeader">
+                <span>
+                    Created By <a href='https://github.com/baguilar1998'>Brian Aguilar</a>
+                </span>
+            </div>
             <div className="MainPage-header">
                 <div className="MainPage-imageHeader">
                     <img className="MainPage-logo" src={fakenewslogo} />
