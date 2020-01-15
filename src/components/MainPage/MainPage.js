@@ -8,7 +8,7 @@ const MainPage = () => {
         <div className="MainPage-container">
             <div className="MainPage-header">
                 <div className="MainPage-imageHeader">
-                    <img className="MainPage-logo" src={fakenewslogo} />
+                    <img className="MainPage-logo" src={fakenewslogo} alt='fakenews-logo' />
                 </div>
             </div>
             <div className="MainPage-Body">
