@@ -6,7 +6,6 @@ class SearchForm extends Component {
 
     constructor() {
         super();
-        this.API_KEY = 'AIzaSyC1CwX4-gsBFTLG6PR-fqrT2g9CwJSmzxQ';
         this.state = {
             searchInput: ''
         }
@@ -41,7 +40,7 @@ class SearchForm extends Component {
     search = (event) => {
         event.preventDefault();
         const searchInput = this.state.searchInput;
-        const url = 'https://www.googleapis.com/customsearch/v1?key='+this.API_KEY+'&cx=008691438334517141649:jwfbvclbstt&q='+searchInput;
+        const url = 'http://127.0.0.1:5000/api/search';
         Axios.get(url).then(res => {
             let resultsList = res.data.items;
             console.log(resultsList);
