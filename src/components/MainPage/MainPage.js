@@ -3,7 +3,8 @@ import SearchForm from '../SearchForm/SearchForm';
 import fakenewslogo from '../../assets/fakenews.png';
 import './MainPage.scss';
 
-const MainPage = () => {
+const MainPage = (props) => {
+    const { history } = props;
     return(
         <div className="MainPage-container">
             <div className="MainPage-header">
@@ -12,7 +13,7 @@ const MainPage = () => {
                 </div>
             </div>
             <div className="MainPage-Body">
-                <SearchForm />
+                <SearchForm history={history}/>
             </div>
             <div className="MainPage-Footer">
                 <span>

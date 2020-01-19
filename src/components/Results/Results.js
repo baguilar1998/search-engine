@@ -10,7 +10,9 @@ const Results = (props) => {
                 <NavBar />
             </div>
             <div className="Results-body">
-                <ResultsList/>
+                <div className="Results-resultsList">
+                    <ResultsList/>
+                </div>
             </div>
         </div>
     )
