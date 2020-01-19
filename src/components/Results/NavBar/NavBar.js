@@ -6,14 +6,30 @@ class NavBar extends Component {
         super(props);
     }*/
 
+    state = ({
+        searchInput:'',
+        results: []
+    });
+
     render() {
         return(
             <div className="NavBar-container">
                 <div className="NavBar-logo">
-                    <img src={Logo} alt='fakenews-logo'/>
+                    <img className="NavBar-imgLogo" src={Logo} alt='fakenews-logo'/>
+                </div>
+                <div className="NavBar-search">
+                <input className="NavBar-searchBar" type="text" onChange={this.updateSearchInput}/>
                 </div>
             </div>
         );
+    }
+
+    updateSearchInput = (event) => {
+        const input = event.target.value;
+        this.setState({
+            searchInput: input
+        });
+        console.log(input);
     }
 }
 export default NavBar;

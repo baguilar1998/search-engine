@@ -39,12 +39,12 @@ class SearchForm extends Component {
 
     search = (event) => {
         event.preventDefault();
-        const searchInput = this.state.searchInput;
-        const url = 'http://127.0.0.1:5000/api/search';
-        Axios.get(url).then(res => {
-            let resultsList = res.data.items;
-            console.log(resultsList);
-        });
+        // const searchInput = this.state.searchInput;
+        // const url = 'http://127.0.0.1:5000/api/search';
+        // Axios.get(url).then(res => {
+        //     let resultsList = res.data.items;
+        //     console.log(resultsList);
+        // });
     }
 
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './NavBar/NavBar';
+import ResultsList from './ResultsList/ResultsList';
 import './Results.scss';
 
 const Results = (props) => {
@@ -8,7 +9,9 @@ const Results = (props) => {
             <div className="Results-header">
                 <NavBar />
             </div>
-            Results Page!
+            <div className="Results-body">
+                <ResultsList/>
+            </div>
         </div>
     )
 }
