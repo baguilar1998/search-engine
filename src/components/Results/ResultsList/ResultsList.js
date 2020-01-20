@@ -34,7 +34,7 @@ const ResultsList = (props) => {
     const results = props.results.map(result => {
         return {
             id: result.cacheId,
-            link: result.displayLink,
+            link: result.link,
             title: result.title,
             snippet: result.snippet
 
