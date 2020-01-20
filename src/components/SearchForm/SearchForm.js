@@ -15,7 +15,7 @@ class SearchForm extends Component {
     render() {
         return(
             <div className="SearchForm-container">
-                <form className="SearchForm-form">
+                <form onSubmit={this.search} className="SearchForm-form">
                     <input className="SearchForm-searchBar" type="text" onChange={this.updateSearchInput}/>
                     <div className="SearchForm-buttonContainer">
                         <div onClick={this.search} className="SearchForm-searchButton" >
@@ -42,11 +42,26 @@ class SearchForm extends Component {
         event.preventDefault();
         const searchInput = this.state.searchInput;
         const url = 'http://127.0.0.1:5000/api/search';
-        Axios.get(url).then(res => {
+        this.props.setLoading(true);
+        Axios.get(url, {
+            params: {
+                query:searchInput
+            }
+        })
+        .then(res => {
             let resultsList = res.data.items;
-            console.log(resultsList);
+            this.props.history.push({
+                pathname:'/results',
+                state: {
+                    results:resultsList
+                }
+            });
+            this.props.setLoading(false);
+        })
+        .catch(err=>{
+            console.log('Server is down');
+            this.props.setLoading(false);
         });
-        this.props.history.push('/results');
     }
 
 }

@@ -4,6 +4,7 @@ import ResultsList from './ResultsList/ResultsList';
 import './Results.scss';
 
 const Results = (props) => {
+    const results = props.location.state.results;
     return(
         <div className="Results-container">
             <div className="Results-header">
@@ -11,7 +12,7 @@ const Results = (props) => {
             </div>
             <div className="Results-body">
                 <div className="Results-resultsList">
-                    <ResultsList/>
+                    <ResultsList results={results}/>
                 </div>
             </div>
         </div>

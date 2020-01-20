@@ -2,8 +2,8 @@ import React from 'react';
 import './ResultsList.scss';
 
 const ResultsList = (props) => {
-
-    const results = [
+    console.log(props);
+    /*const results = [
         {
                 link:'https://en.wikipedia.org/wiki/My_Hero_Academia',
                 title:'My Hero Academia - Wikipedia',
@@ -29,7 +29,17 @@ const ResultsList = (props) => {
             title:'My Hero Academia - Wikipedia',
             snippet: '"My Hero Academia is a Japanese superhero manga series written and illustrated by Kōhei Horikoshi. It has been serialized in Weekly Shōnen Jump since July ...'
         }
-    ];
+    ];*/
+
+    const results = props.results.map(result => {
+        return {
+            id: result.cacheId,
+            link: result.displayLink,
+            title: result.title,
+            snippet: result.snippet
+
+        };
+    });
 
     const resultsList = results.map(result => {
         return(

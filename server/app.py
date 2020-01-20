@@ -1,4 +1,4 @@
-from flask import Flask, jsonify 
+from flask import Flask, jsonify, request 
 from flask_cors import CORS
 import requests
 
@@ -14,7 +14,7 @@ def main_req():
  
 @app.route('/api/search', methods=['GET'])
 def get_search_results():
-    query ='My Hero Academia'
+    query = request.args.get('query', default = "My Hero Academia", type=str)
     results = requests.get(url = URL+query)
     return jsonify(results.json())
 

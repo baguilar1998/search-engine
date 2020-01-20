@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SearchForm from '../SearchForm/SearchForm';
+import Loading from '../Loading/Loading';
 import fakenewslogo from '../../assets/fakenews.png';
 import './MainPage.scss';
 
 const MainPage = (props) => {
     const { history } = props;
-    return(
+    const [loading, setLoading] = useState(false);
+    return !loading ? (   
         <div className="MainPage-container">
             <div className="MainPage-header">
                 <div className="MainPage-imageHeader">
@@ -13,7 +15,7 @@ const MainPage = (props) => {
                 </div>
             </div>
             <div className="MainPage-Body">
-                <SearchForm history={history}/>
+                <SearchForm history={history} setLoading={setLoading} />
             </div>
             <div className="MainPage-Footer">
                 <span>
@@ -21,7 +23,11 @@ const MainPage = (props) => {
                 </span>
             </div>
         </div>
+    ):
+    (
+        <Loading/>
     );
+
 }
 
 export default MainPage;
