@@ -51,7 +51,7 @@ const ResultsList = (props) => {
                     </a>
                 </div>
                 <div className="ResultsList-resultItemBody">
-                    <span>{result.snippet}</span>
+                    <span className="ResultsList-snippet">{result.snippet}</span>
                 </div>
             </div>
         );

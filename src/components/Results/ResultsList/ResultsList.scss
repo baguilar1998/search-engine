@@ -1,16 +1,20 @@
 .ResultsList-resultItem {
     width:600px;
-    height:125px;
+    min-height:98px;
     text-align:left;
-    margin-left:130px;
-    padding:2px;
+    margin-left:116px;
+    margin-top:20px;
+    text-overflow: ellipsis;
 }
 
 .ResultsList-resultItemLink{
     color:rgb(136, 136, 136);
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space: nowrap;
 }
 .ResultsList-resultItemTitle{
-   font-size:17pt;
+   font-size:15pt;
 }
 
 .ResultsList-resultItemTitle:hover{
@@ -21,4 +25,12 @@
     display:flex;
     flex-direction: column;
     text-decoration: none;
+}
+
+.ResultsList-resultItemBody {
+    width:100%;
+    min-height:100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
 }

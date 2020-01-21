@@ -55,9 +55,9 @@ class SearchForm extends Component {
             }
         })
         .then(res => {
+            console.log(res);
             let resultsList = res.data.items;
             const path = '/results/'+searchInput.replace(/\s/g,'-');
-            console.log(resultsList);
             this.props.setLoading(false);
             this.props.history.push({
                 pathname: path,

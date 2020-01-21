@@ -2,6 +2,7 @@
     height:100%;
     display:flex;
     flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .Results-header {
@@ -12,6 +13,7 @@
 .Results-body{
     height:100%;
 }
+
 .Results-resultsList {
     margin-top:25px;
 }
