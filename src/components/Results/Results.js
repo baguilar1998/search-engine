@@ -5,14 +5,14 @@ import Loading from '../Loading/Loading';
 import './Results.scss';
 
 const Results = (props) => {
-
+    const { history } = props;
     const results = props.location.state.results;
     const [loading, setLoading] = useState(false);
 
     return !loading ?(
       <div className="Results-container">
             <div className="Results-header">
-                <NavBar setLoading = {setLoading}/>
+                <NavBar history={history} setLoading = {setLoading}/>
             </div>
             <div className="Results-body">
                 <div className="Results-resultsList">
