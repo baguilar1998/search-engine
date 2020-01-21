@@ -13,7 +13,13 @@ class SearchForm extends Component {
     }
 
     render() {
-        return(
+        const isNavbar = this.props.isNavbar;
+        return isNavbar ?(
+            <form onSubmit={this.search}>
+                <input className="SearchForm-navbarSearchBar" type="text" onChange={this.updateSearchInput}/>
+            </form>
+        ):
+        (
             <div className="SearchForm-container">
                 <form onSubmit={this.search} className="SearchForm-form">
                     <input className="SearchForm-searchBar" type="text" onChange={this.updateSearchInput}/>
@@ -50,13 +56,15 @@ class SearchForm extends Component {
         })
         .then(res => {
             let resultsList = res.data.items;
+            const path = '/results/'+searchInput.replace(/\s/g,'-');
+            console.log(resultsList);
+            this.props.setLoading(false);
             this.props.history.push({
-                pathname:'/results',
+                pathname: path,
                 state: {
                     results:resultsList
                 }
             });
-            this.props.setLoading(false);
         })
         .catch(err=>{
             console.log('Server is down');

@@ -2,8 +2,8 @@ import React from 'react';
 import './ResultsList.scss';
 
 const ResultsList = (props) => {
-    console.log(props);
-    /*const results = [
+    /*console.log(props);
+    const results = [
         {
                 link:'https://en.wikipedia.org/wiki/My_Hero_Academia',
                 title:'My Hero Academia - Wikipedia',

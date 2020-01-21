@@ -48,3 +48,16 @@
 .SearchForm-searchButtonText {
   text-decoration: none;
 }
+
+.SearchForm-navbarSearchBar {
+  width: 650px;
+  height:3px;
+  background: #fff;
+  font: inherit;
+  box-shadow: 0 6px 10px 4px rgba(0, 0, 0 , .1);
+  border: 0;
+  outline: 0;
+  padding: 18px 18px;
+  margin-top:15px;
+  margin-left:15px;
+}

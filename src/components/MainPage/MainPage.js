@@ -7,6 +7,8 @@ import './MainPage.scss';
 const MainPage = (props) => {
     const { history } = props;
     const [loading, setLoading] = useState(false);
+    const isNavbar = false;
+
     return !loading ? (   
         <div className="MainPage-container">
             <div className="MainPage-header">
@@ -15,7 +17,7 @@ const MainPage = (props) => {
                 </div>
             </div>
             <div className="MainPage-Body">
-                <SearchForm history={history} setLoading={setLoading} />
+                <SearchForm isNavbar={isNavbar} history={history} setLoading={setLoading} />
             </div>
             <div className="MainPage-Footer">
                 <span>
