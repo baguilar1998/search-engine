@@ -1,1 +1,2 @@
-<img alt="Fake News" src="https://github.com/baguilar1998/search-engine/blob/master/src/assets/fakenews-transparent.png"/>
+<img alt="Fake News" src="https://github.com/baguilar1998/search-engine/blob/master/src/assets/fakenews.png"/>
+> A simple practice application that uses React and Flask to create a simple search engine using the Google Search API

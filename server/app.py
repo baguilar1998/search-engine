@@ -6,6 +6,7 @@ API_KEY = 'AIzaSyC1CwX4-gsBFTLG6PR-fqrT2g9CwJSmzxQ'
 URL = 'https://www.googleapis.com/customsearch/v1?key='+API_KEY+'&cx=008691438334517141649:jwfbvclbstt&q=';
 
 app = Flask(__name__)
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 CORS(app)
 
 @app.route('/')
@@ -19,4 +20,5 @@ def get_search_results():
     return jsonify(results.json())
 
 if __name__ == '__main__':
- app.run()
+    app.debug = True
+    app.run(host ='0.0.0.0', port = 5000)

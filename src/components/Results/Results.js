@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import NavBar from './NavBar/NavBar';
 import ResultsList from './ResultsList/ResultsList';
+import Footer from '../Footer/Footer';
 import Loading from '../Loading/Loading';
 import './Results.scss';
 
@@ -18,6 +19,9 @@ const Results = (props) => {
                 <div className="Results-resultsList">
                     <ResultsList results={results}/>
                 </div>
+            </div>
+            <div className="Results-footer">
+                <Footer />
             </div>
         </div>
     ):

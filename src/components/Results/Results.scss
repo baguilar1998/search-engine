@@ -1,6 +1,6 @@
 .Results-container {
-    height:100%;
     display:flex;
+    flex:1;
     flex-direction: column;
     justify-content: space-evenly;
 }
@@ -12,6 +12,7 @@
 
 .Results-body{
     height:100%;
+    flex:2;
 }
 
 .Results-resultsList {

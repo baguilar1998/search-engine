@@ -37,6 +37,12 @@ class SearchForm extends Component {
         );
     }
 
+    /**
+     * Updates the search input state every time a
+     * user types in the input bar
+     * @param event: the html tag that the event was 
+     * performed on
+     */
     updateSearchInput = (event) => {
         const newSearchInput = event.target.value;
         this.setState({
@@ -44,18 +50,36 @@ class SearchForm extends Component {
         });
     }
 
+    /**
+     * Calls on the Google API and searches for
+     * web pages based off the given user input
+     * @param event: the html tag that the event was performed
+     * on
+     * @return a list of search results and redirects you
+     * to the results page
+     */
     search = (event) => {
         event.preventDefault();
+        this.props.setLoading(true);
+        // Set up the proper information needed for the
+        // API call
         const searchInput = this.state.searchInput;
         const url = 'http://127.0.0.1:5000/api/search';
-        this.props.setLoading(true);
         Axios.get(url, {
             params: {
                 query:searchInput
             }
         })
         .then(res => {
-            console.log(res);
+            // If input wasnt given, then do not perform the
+            // rest of the actions leading to the results page
+            const inputGiven = searchInput.length !==0;
+            if(!inputGiven) {
+                this.props.setLoading(false);
+                return;
+            }
+            // Get the list of results from the API and send it to
+            // the Results Page Component.
             let resultsList = res.data.items;
             const path = '/results/'+searchInput.replace(/\s/g,'-');
             this.props.setLoading(false);
@@ -67,7 +91,7 @@ class SearchForm extends Component {
             });
         })
         .catch(err=>{
-            console.log('Server is down');
+            console.log('An error has occured');
             this.props.setLoading(false);
         });
     }
