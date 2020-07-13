@@ -17,7 +17,7 @@ const MainPage = (props) => {
                 </div>
             </div>
             <div className="MainPage-Body">
-                <SearchForm isNavbar={isNavbar} history={history} setLoading={setLoading} />
+                <SearchForm searchInput={''} isNavbar={isNavbar} history={history} setLoading={setLoading} />
             </div>
             <div className="MainPage-Footer">
                 <span>
